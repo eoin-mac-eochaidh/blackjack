@@ -8,9 +8,13 @@ let score = 0
 document.getElementById('myButton').onclick = function changeContent() { 
         let vals = deal();
         let scoreNum = getScore(vals[1]);
+
+        score+=scoreNum;
+        if(score>21){score='Bust';}
+        
         document.getElementById('outputS').innerHTML = suit[vals[0]];
         document.getElementById('outputC').innerHTML = cardNums[vals[1]];
-        document.getElementById('outputScore').innerHTML = score+=scoreNum;
+        document.getElementById('outputScore').innerHTML = score;
 }
 
 // Function will create a card, two value array.
